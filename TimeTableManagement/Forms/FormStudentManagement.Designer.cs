@@ -215,7 +215,7 @@ namespace StudentsAndTagsManagement.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(164)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(992, 634);
+            this.ClientSize = new System.Drawing.Size(992, 637);
             this.ControlBox = false;
             this.Controls.Add(this.BtnEdit);
             this.Controls.Add(this.dataGridView1);

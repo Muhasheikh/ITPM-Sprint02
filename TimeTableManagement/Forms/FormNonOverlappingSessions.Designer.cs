@@ -175,8 +175,6 @@ namespace StudentsAndTagsManagement.Forms
             // cmbNOSM3
             // 
             this.cmbNOSM3.FormattingEnabled = true;
-            this.cmbNOSM3.Items.AddRange(new object[] {
-            "None"});
             this.cmbNOSM3.Location = new System.Drawing.Point(705, 213);
             this.cmbNOSM3.Name = "cmbNOSM3";
             this.cmbNOSM3.Size = new System.Drawing.Size(189, 28);

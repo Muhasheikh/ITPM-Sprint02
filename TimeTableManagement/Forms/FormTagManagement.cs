@@ -20,6 +20,8 @@ namespace StudentsAndTagsManagement.Forms
         {
             InitializeComponent();
             Showdata();
+            state();
+            
         }
         public void Showdata()
         {
@@ -52,6 +54,8 @@ namespace StudentsAndTagsManagement.Forms
                 con.Close();
                 Showdata();
             }
+
+            con.Close();
         }
 
         private void FormTagManagement_Load(object sender, EventArgs e)
@@ -62,6 +66,7 @@ namespace StudentsAndTagsManagement.Forms
         private void BTNclearData_Click(object sender, EventArgs e)
         {
             /* clearing the fields*/
+            state();
             tgNametxt.Clear();
             rltedtagtxt.Clear();
         }
@@ -75,6 +80,7 @@ namespace StudentsAndTagsManagement.Forms
             cmd = new SqlCommand("update Tags_Management set TagName = '" + tgNametxt.Text + "', TagCode = '" + tagcodebx.Text + "', RelatedTag = '" + rltedtagtxt.Text + "'" +
                "where tagID='" + Record_ID + "'", con);
             cmd.ExecuteNonQuery();
+            state();
             MessageBox.Show("Your data will be successfully updated");
             con.Close();
             Showdata();
@@ -89,6 +95,7 @@ namespace StudentsAndTagsManagement.Forms
 
             cmd = new SqlCommand("delete from Tags_Management where TagID='" + Record_ID + "'", con);
             cmd.ExecuteNonQuery();
+            state();
             MessageBox.Show("Your data will be deleted successfully");
             con.Close();
             Showdata();
@@ -97,12 +104,35 @@ namespace StudentsAndTagsManagement.Forms
         /* converting the table values again into the text boxes in the form*/
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            state1();
             Record_ID = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString());
             tgNametxt.Text = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
             tagcodebx.Text = dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
             rltedtagtxt.Text = dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();
             
         }
-       
+
+        private void state()
+        {
+
+            btnSubmitData.Enabled = true;
+            BTNdelete.Enabled = false;
+            BTNEditData.Enabled = false;
+
+
+
+        }
+
+        private void state1()
+        {
+
+            btnSubmitData.Enabled = false;
+            BTNdelete.Enabled = true;
+            BTNEditData.Enabled = true;
+
+
+
+        }
+
     }
 }

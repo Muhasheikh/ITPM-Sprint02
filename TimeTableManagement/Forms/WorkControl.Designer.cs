@@ -29,7 +29,7 @@ namespace StudentsAndTagsManagement
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Content = new System.Windows.Forms.Panel();
             this.btn_Refresh = new System.Windows.Forms.Button();
@@ -43,13 +43,13 @@ namespace StudentsAndTagsManagement
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(191)))), ((int)(((byte)(255)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(191)))), ((int)(((byte)(255)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(191)))), ((int)(((byte)(255)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(122, 88);
+            this.dataGridView1.Location = new System.Drawing.Point(128, 126);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -64,9 +64,9 @@ namespace StudentsAndTagsManagement
             this.Content.Controls.Add(this.btnview);
             this.Content.Controls.Add(this.textBox1);
             this.Content.Controls.Add(this.dataGridView1);
-            this.Content.Location = new System.Drawing.Point(0, 139);
+            this.Content.Location = new System.Drawing.Point(0, 25);
             this.Content.Name = "Content";
-            this.Content.Size = new System.Drawing.Size(876, 430);
+            this.Content.Size = new System.Drawing.Size(876, 481);
             this.Content.TabIndex = 29;
             this.Content.Paint += new System.Windows.Forms.PaintEventHandler(this.Content_Paint);
             // 
@@ -78,9 +78,9 @@ namespace StudentsAndTagsManagement
             this.btn_Refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(31)))), ((int)(((byte)(84)))));
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Refresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Refresh.Location = new System.Drawing.Point(491, 324);
+            this.btn_Refresh.Location = new System.Drawing.Point(491, 365);
             this.btn_Refresh.Name = "btn_Refresh";
-            this.btn_Refresh.Size = new System.Drawing.Size(262, 52);
+            this.btn_Refresh.Size = new System.Drawing.Size(262, 60);
             this.btn_Refresh.TabIndex = 31;
             this.btn_Refresh.Text = "REFRESH";
             this.btn_Refresh.UseVisualStyleBackColor = false;
@@ -91,7 +91,7 @@ namespace StudentsAndTagsManagement
             this.btnview.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnview.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnview.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnview.Location = new System.Drawing.Point(201, 324);
+            this.btnview.Location = new System.Drawing.Point(195, 373);
             this.btnview.Name = "btnview";
             this.btnview.Size = new System.Drawing.Size(262, 52);
             this.btnview.TabIndex = 30;

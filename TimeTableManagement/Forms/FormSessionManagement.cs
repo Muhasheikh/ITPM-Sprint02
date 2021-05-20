@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using TimeTableManagement.Forms;
+using ITPM;
+
 
 namespace StudentsAndTagsManagement.Forms
 {
@@ -51,7 +53,8 @@ namespace StudentsAndTagsManagement.Forms
 
         private void BtnNormalSessions_Click(object sender, EventArgs e)
         {
-           
+            addSession mg = new addSession();
+            mg.Show();
         }
 
         private void buttonConsecutiveSessions_Click(object sender, EventArgs e)

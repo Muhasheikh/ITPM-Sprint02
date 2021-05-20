@@ -23,22 +23,23 @@ namespace StudentsAndTagsManagement
 
             displayLecturer();
             DisplayStudent();
+            DisplaySession();
         }
 
         public void displayLecturer() {
 
-
+            cmbSession.Items.Clear();
             cmbLecturer.Items.Clear();
             cmbGroup.Items.Clear();
             cmbSubGroup.Items.Clear();
-          String sql = "SELECT * FROM tbl_Lecturer";
+          String sql = "SELECT * FROM Lec_details";
             con.Open();
             cmd = new SqlCommand(sql, con);
             rd = cmd.ExecuteReader();
 
             while (rd.Read()) {
 
-                cmbLecturer.Items.Add(rd["LecturerName"].ToString());
+                cmbLecturer.Items.Add(rd["Lecturer_Name"].ToString());
                 
 
             }
@@ -46,7 +47,22 @@ namespace StudentsAndTagsManagement
 
 
         }
+        public void DisplaySession() {
 
+            String sql = "SELECT * FROM Session_Management";
+            con.Open();
+            cmd = new SqlCommand(sql, con);
+            rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+
+                cmbSession.Items.Add(rd["SessionID"].ToString());
+              
+
+            }
+            con.Close();
+        }
         public void DisplayStudent() {
 
 

@@ -21,6 +21,7 @@ namespace StudentsAndTagsManagement.Forms
         {
             InitializeComponent();
             Showdata();
+            state();
         }
 
 
@@ -56,6 +57,7 @@ namespace StudentsAndTagsManagement.Forms
                 con.Close();
                 Showdata();
             }
+            con.Close();
         }
 
         public void Showdata()
@@ -70,6 +72,7 @@ namespace StudentsAndTagsManagement.Forms
         private void btnClear_Click(object sender, EventArgs e)
         {
             /* clearing the fields*/
+            state();
             gpNumbertxbx.Clear();
             SbgpNumbertxbx.Clear();
 
@@ -85,6 +88,7 @@ namespace StudentsAndTagsManagement.Forms
 
             cmd = new SqlCommand("delete from Student_Management where StID='" + Record_ID +  "'", con);
             cmd.ExecuteNonQuery();
+            state();
             MessageBox.Show("Your data will be deleted successfully");
             con.Close();
             Showdata();
@@ -104,6 +108,7 @@ namespace StudentsAndTagsManagement.Forms
         /* converting the table values again into the text boxes in the form*/
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            state1();
             Record_ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             academicyrcmbx.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             programmecmbox.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -122,11 +127,32 @@ namespace StudentsAndTagsManagement.Forms
             cmd = new SqlCommand("update Student_Management set AcademicYearSemester = '" + academicyrcmbx.Text + "', Programme = '" + programmecmbox.Text + "', GroupNumber = '" + gpNumbertxbx.Text + "', SubGroupNumber = '" + SbgpNumbertxbx.Text + "', GroupID = '" + GroupID + "', SubGroupID = '" + SubGroupID + "'" +
                "where StID='" + Record_ID + "'",con);
             cmd.ExecuteNonQuery();
+            state();
             MessageBox.Show("Your data will be successfully updated");
             con.Close();
             Showdata();
         }
 
-        
+        private void state()
+        {
+
+            btnSubmit.Enabled = true;
+            btnManage.Enabled = false;
+            BtnEdit.Enabled = false;
+
+
+
+        }
+
+        private void state1()
+        {
+
+            btnSubmit.Enabled = false;
+            btnManage.Enabled = true;
+            BtnEdit.Enabled = true;
+
+
+
+        }
     }
 }

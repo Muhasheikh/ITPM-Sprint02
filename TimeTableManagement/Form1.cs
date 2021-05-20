@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ITPM;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TimeTableManagement.Forms;
+using dhara;
+using finallllllllllllll;
 
 namespace StudentsAndTagsManagement
 {
@@ -108,7 +112,14 @@ namespace StudentsAndTagsManagement
 
         private void btnLecturers_Click(object sender, EventArgs e)
         {
+           
             ActivateButton(sender);
+            Lec lc = new Lec();
+
+            lc.Show();
+
+
+
         }
 
         private void btnStudents_Click(object sender, EventArgs e)
@@ -119,6 +130,9 @@ namespace StudentsAndTagsManagement
         private void btnSubjects_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+
+            subject su = new subject();
+            su.Show();
             
         }
 
@@ -130,7 +144,8 @@ namespace StudentsAndTagsManagement
 
         private void btnLocations_Click(object sender, EventArgs e)
         {
-
+            location loc = new location();
+            loc.Show();
         }
 
         private void btnSessions_Click(object sender, EventArgs e)
@@ -171,11 +186,20 @@ namespace StudentsAndTagsManagement
         private void BtnRoomM_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+            Room rm = new Room();
+            rm.Show();
+            
         }
 
         private void BtnStatM_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+        }
+
+        private void btn_TimeTable_Click(object sender, EventArgs e)
+        {
+            TimeTable wk = new TimeTable();
+            MainControl.ShowControl(wk, panelForm);
         }
     }
 }

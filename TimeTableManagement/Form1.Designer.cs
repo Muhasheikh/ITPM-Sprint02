@@ -43,16 +43,14 @@ namespace StudentsAndTagsManagement
             this.DashBoard = new System.Windows.Forms.Button();
             this.buttonLogo = new System.Windows.Forms.Button();
             this.panelForm = new System.Windows.Forms.Panel();
-            this.C = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btn_TimeTable = new System.Windows.Forms.Button();
             this.panelSide.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSide
             // 
             this.panelSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(164)))));
-            this.panelSide.Controls.Add(this.label1);
-            this.panelSide.Controls.Add(this.C);
+            this.panelSide.Controls.Add(this.btn_TimeTable);
             this.panelSide.Controls.Add(this.BtnStatM);
             this.panelSide.Controls.Add(this.BtnRoomM);
             this.panelSide.Controls.Add(this.BtnAvailabilityM);
@@ -252,27 +250,19 @@ namespace StudentsAndTagsManagement
             this.panelForm.Size = new System.Drawing.Size(992, 637);
             this.panelForm.TabIndex = 1;
             // 
-            // C
+            // btn_TimeTable
             // 
-            this.C.AutoSize = true;
-            this.C.Font = new System.Drawing.Font("Stencil", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.C.ForeColor = System.Drawing.Color.White;
-            this.C.Location = new System.Drawing.Point(267, 585);
-            this.C.Name = "C";
-            this.C.Size = new System.Drawing.Size(55, 52);
-            this.C.TabIndex = 0;
-            this.C.Text = "©";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(52, 593);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 35);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "COPYRIGHTS";
+            this.btn_TimeTable.BackColor = System.Drawing.Color.White;
+            this.btn_TimeTable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_TimeTable.Font = new System.Drawing.Font("Copperplate Gothic Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_TimeTable.ForeColor = System.Drawing.Color.Black;
+            this.btn_TimeTable.Location = new System.Drawing.Point(0, 586);
+            this.btn_TimeTable.Name = "btn_TimeTable";
+            this.btn_TimeTable.Size = new System.Drawing.Size(355, 49);
+            this.btn_TimeTable.TabIndex = 13;
+            this.btn_TimeTable.Text = "Filter TImeTable";
+            this.btn_TimeTable.UseVisualStyleBackColor = false;
+            this.btn_TimeTable.Click += new System.EventHandler(this.btn_TimeTable_Click);
             // 
             // Form1
             // 
@@ -285,7 +275,6 @@ namespace StudentsAndTagsManagement
             this.Name = "Form1";
             this.Text = "Form1";
             this.panelSide.ResumeLayout(false);
-            this.panelSide.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -307,8 +296,7 @@ namespace StudentsAndTagsManagement
         private System.Windows.Forms.Button BtnRoomM;
         private System.Windows.Forms.Button BtnA;
         private System.Windows.Forms.Button BtnAvailabilityM;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label C;
+        private System.Windows.Forms.Button btn_TimeTable;
     }
 }
 
