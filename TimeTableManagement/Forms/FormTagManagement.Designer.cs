@@ -196,7 +196,9 @@ namespace StudentsAndTagsManagement.Forms
             this.Controls.Add(this.labelTagName);
             this.Controls.Add(this.labelTagManagement);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "FormTagManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTagManagement";
             this.Load += new System.EventHandler(this.FormTagManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

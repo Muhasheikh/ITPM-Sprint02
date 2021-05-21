@@ -171,7 +171,7 @@ namespace dhara
 
 
 
-            sql = "update loca set ID= @ID,building= @building, floor=@floor,room=@room,capacity=@capacity,type=@type ";
+            sql = "update loca set building= @building, floor=@floor,room=@room,capacity=@capacity,type=@type where ID=@ID ";
 
             con.Open();
 
@@ -185,19 +185,19 @@ namespace dhara
 
             cmd.Parameters.AddWithValue("@room", troom.Text);
 
-            cmd.Parameters.AddWithValue("@capacity", cap.TextAlign);
+            cmd.Parameters.AddWithValue("@capacity", cap.Text);
 
             cmd.Parameters.AddWithValue("@type", ttype.Text);
 
             cmd.ExecuteNonQuery();
             MessageBox.Show("Updated!!!");
             txtid.Enabled = true;
-            txid.Clear();
-            tbuild.Items.Clear();
-            tfloor.Items.Clear();
-            troom.Items.Clear();
+           // txid.Clear();
+           // tbuild.Items.Clear();
+            //tfloor.Items.Clear();
+           // troom.Items.Clear();
 
-            ttype.Items.Clear();
+           // ttype.Items.Clear();
 
 
 
@@ -237,6 +237,16 @@ namespace dhara
 
 
 
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
 
         }
     }

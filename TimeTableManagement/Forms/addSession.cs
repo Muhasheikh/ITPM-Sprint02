@@ -66,26 +66,38 @@ namespace ITPM
         private void button2_Click(object sender, EventArgs e)
         {
 
-            con.Open();
+            if (ValidateChildren(ValidationConstraints.Enabled) &&
+                lec1.Text == ""  || sub.Text == "" || code.Text == "" || tag.Text == "" || grpID.Text == "" || subgrp.Text == "" || numOfStu.Text == "" || dur.Text == "")
+            {
+                MessageBox.Show("Please fill out all the Field(s)",
+                "Unable to Submit", MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation,
+                                MessageBoxDefaultButton.Button1);
+            }
+            else
+            {
 
-            cmd = new SqlCommand("insert into Session_Management ( Lecturer_1 , Lecturer_2 , subject_name , subject_code , Tags , GroupID , SubGroupID, NumberOfStudents, Duration)" +
-                "values('" + lec1.Text + "','" + lec2.Text + "','" + sub.Text + "','" + code.Text + "'" +
-                ",'" + tag.Text + "','" + grpID.Text + "','" + subgrp.Text + "','" + numOfStu.Text + "','" + dur.Text + "')", con);
+                con.Open();
 
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Data Insert Successfully!!");
-            con.Close();
+                cmd = new SqlCommand("insert into Session_Management ( Lecturer_1 , Lecturer_2 , subject_name , subject_code , Tags , GroupID , SubGroupID, NumberOfStudents, Duration)" +
+                    "values('" + lec1.Text + "','" + lec2.Text + "','" + sub.Text + "','" + code.Text + "'" +
+                    ",'" + tag.Text + "','" + grpID.Text + "','" + subgrp.Text + "','" + numOfStu.Text + "','" + dur.Text + "')", con);
 
-            lec1.SelectedIndex = -1;
-            lec2.SelectedIndex = -1;
-            sub.SelectedIndex = -1;
-            code.SelectedIndex = -1;
-            tag.SelectedIndex = -1;
-            grpID.SelectedIndex = -1;
-            subgrp.SelectedIndex = -1;
-            numOfStu.Clear();
-            dur.SelectedIndex = -1;
-            // Lname.Clear();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Data Insert Successfully!!");
+                con.Close();
+
+                lec1.SelectedIndex = -1;
+                lec2.SelectedIndex = -1;
+                sub.SelectedIndex = -1;
+                code.SelectedIndex = -1;
+                tag.SelectedIndex = -1;
+                grpID.SelectedIndex = -1;
+                subgrp.SelectedIndex = -1;
+                numOfStu.Clear();
+                dur.SelectedIndex = -1;
+                // Lname.Clear();
+            }
         }
 
 

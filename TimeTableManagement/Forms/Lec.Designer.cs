@@ -115,6 +115,7 @@
             // 
             // level
             // 
+            this.level.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.level.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.level.FormattingEnabled = true;
             this.level.Items.AddRange(new object[] {
@@ -206,6 +207,7 @@
             // 
             // center
             // 
+            this.center.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.center.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.center.FormattingEnabled = true;
             this.center.Items.AddRange(new object[] {
@@ -222,6 +224,7 @@
             // 
             // faculty
             // 
+            this.faculty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.faculty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.faculty.FormattingEnabled = true;
             this.faculty.Items.AddRange(new object[] {
@@ -236,6 +239,7 @@
             // 
             // department
             // 
+            this.department.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.department.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.department.FormattingEnabled = true;
             this.department.Items.AddRange(new object[] {
@@ -255,6 +259,7 @@
             // 
             // building
             // 
+            this.building.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.building.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.building.FormattingEnabled = true;
             this.building.Items.AddRange(new object[] {
@@ -285,11 +290,11 @@
             // 
             // button16
             // 
-            this.button16.BackColor = System.Drawing.Color.Navy;
+            this.button16.BackColor = System.Drawing.Color.Indigo;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button16.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button16.Location = new System.Drawing.Point(761, 630);
+            this.button16.Location = new System.Drawing.Point(767, 628);
             this.button16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(149, 46);
@@ -337,6 +342,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "Lec";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

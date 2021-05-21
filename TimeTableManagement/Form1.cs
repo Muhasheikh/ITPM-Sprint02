@@ -11,22 +11,153 @@ using System.Windows.Forms;
 using TimeTableManagement.Forms;
 using dhara;
 using finallllllllllllll;
+using System.Data.SqlClient;
 
 namespace StudentsAndTagsManagement
 {
     public partial class Form1 : Form
     {
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-4EIA1KI\SQLEXPRESS;Initial Catalog=TimeTableManagement;Integrated Security=True");
+        SqlCommand cmd;
+        SqlDataAdapter adapt;
+        SqlDataReader rd;
+        private SqlCommand command1;
+        /*private SqlCommand command2;
+        private SqlCommand command3;
+        private SqlCommand command4;
+        private SqlCommand command5;
+        private SqlCommand command6;
+        private SqlCommand command7;
+        private SqlCommand command8;*/
         //fields
         private Button currentButton;
         private Random random;
         private int tempIndex;
         private Form activeForm;
+       
+ 
 
         //constructor
         public Form1()
         {
             InitializeComponent();
             random = new Random();
+            LoadData();
+            LoadData1();
+            LoadData2();
+        }
+
+
+        //load data
+        private void LoadData2()
+        {
+
+            try
+            {
+
+                String getLecturers = "select count(*) from Subject_Management";
+
+
+
+                con.Open();
+
+
+
+
+                command1 = new SqlCommand(getLecturers, con);
+
+
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+
+                while (reader1.Read())
+                {
+                    int studentCount = reader1.GetInt32(0);
+                    lableSub.Text = studentCount.ToString();
+
+
+                    con.Close();
+                }
+            }
+
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+        }
+        private void LoadData1() {
+
+            try
+            {
+
+                String getLecturers = "select count(*) from Lec_Details";
+
+
+
+                con.Open();
+
+
+
+
+                command1 = new SqlCommand(getLecturers, con);
+
+
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+
+                while (reader1.Read())
+                {
+                    int studentCount = reader1.GetInt32(0);
+                    labelLecs.Text = studentCount.ToString();
+
+
+                    con.Close();
+                }
+            }
+
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
+        }
+        private void LoadData()
+        {
+            try
+            {
+
+                String getStudents = "select count(*) from Student_Management";
+
+
+
+                con.Open();
+
+
+
+
+                command1 = new SqlCommand(getStudents, con);
+
+
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+
+                while (reader1.Read())
+                {
+                    int studentCount = reader1.GetInt32(0);
+                    lableSt.Text = studentCount.ToString();
+
+
+                    con.Close();
+                }
+            }
+
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
         }
 
         //methods
@@ -95,7 +226,8 @@ namespace StudentsAndTagsManagement
 
         private void DashBoard_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.FormDashboard(), sender);
+
         }
 
         private void buttonWorkingDays_Click(object sender, EventArgs e)
@@ -144,6 +276,7 @@ namespace StudentsAndTagsManagement
 
         private void btnLocations_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender);
             location loc = new location();
             loc.Show();
         }
@@ -173,7 +306,7 @@ namespace StudentsAndTagsManagement
 
         private void buttonLogo_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            
         }
 
         private void BtnAvailabilityM_Click(object sender, EventArgs e)
@@ -200,6 +333,11 @@ namespace StudentsAndTagsManagement
         {
             TimeTable wk = new TimeTable();
             MainControl.ShowControl(wk, panelForm);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

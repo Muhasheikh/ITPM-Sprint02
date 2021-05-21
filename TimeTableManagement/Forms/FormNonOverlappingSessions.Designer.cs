@@ -310,8 +310,9 @@ namespace StudentsAndTagsManagement.Forms
             this.Controls.Add(this.labelSubjectCodeNOSM);
             this.Controls.Add(this.labelNonOverlappingManagement);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.MaximizeBox = false;
             this.Name = "FormNonOverlappingSessions";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormNonOverlappingSessions";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNOSM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSessionDetails)).EndInit();

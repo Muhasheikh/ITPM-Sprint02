@@ -232,7 +232,9 @@ namespace StudentsAndTagsManagement.Forms
             this.Controls.Add(this.labelAcYr);
             this.Controls.Add(this.labelStManagement);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "FormStudentManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormStudentManagement";
             this.Load += new System.EventHandler(this.FormStudentManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

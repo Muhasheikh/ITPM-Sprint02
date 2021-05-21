@@ -113,6 +113,7 @@
             // 
             // lec1
             // 
+            this.lec1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lec1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lec1.FormattingEnabled = true;
             this.lec1.Location = new System.Drawing.Point(180, 168);
@@ -147,6 +148,7 @@
             // 
             // code
             // 
+            this.code.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.code.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.code.FormattingEnabled = true;
             this.code.Location = new System.Drawing.Point(700, 254);
@@ -157,6 +159,7 @@
             // 
             // sub
             // 
+            this.sub.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sub.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.sub.FormattingEnabled = true;
             this.sub.Location = new System.Drawing.Point(180, 254);
@@ -167,6 +170,7 @@
             // 
             // tag
             // 
+            this.tag.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tag.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tag.FormattingEnabled = true;
             this.tag.Location = new System.Drawing.Point(445, 326);
@@ -177,9 +181,10 @@
             // 
             // grpID
             // 
+            this.grpID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.grpID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.grpID.FormattingEnabled = true;
-            this.grpID.Location = new System.Drawing.Point(180, 414);
+            this.grpID.Location = new System.Drawing.Point(180, 416);
             this.grpID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grpID.Name = "grpID";
             this.grpID.Size = new System.Drawing.Size(311, 33);
@@ -187,6 +192,7 @@
             // 
             // dur
             // 
+            this.dur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dur.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dur.FormattingEnabled = true;
             this.dur.Items.AddRange(new object[] {
@@ -280,7 +286,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button3.BackColor = System.Drawing.Color.Indigo;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -316,6 +322,7 @@
             // 
             // subgrp
             // 
+            this.subgrp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.subgrp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.subgrp.FormattingEnabled = true;
             this.subgrp.Items.AddRange(new object[] {
@@ -358,7 +365,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "addSession";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addSession";
             this.Load += new System.EventHandler(this.addSession_Load);
             this.ResumeLayout(false);

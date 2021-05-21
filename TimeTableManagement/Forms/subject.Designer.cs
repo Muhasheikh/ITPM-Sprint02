@@ -186,6 +186,7 @@
             // 
             // off_s
             // 
+            this.off_s.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.off_s.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.off_s.FormattingEnabled = true;
             this.off_s.Items.AddRange(new object[] {
@@ -217,6 +218,7 @@
             // 
             // lH
             // 
+            this.lH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lH.FormattingEnabled = true;
             this.lH.Items.AddRange(new object[] {
@@ -231,6 +233,7 @@
             // 
             // tH
             // 
+            this.tH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tH.FormattingEnabled = true;
             this.tH.Items.AddRange(new object[] {
@@ -245,6 +248,7 @@
             // 
             // labH
             // 
+            this.labH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.labH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labH.FormattingEnabled = true;
             this.labH.Items.AddRange(new object[] {
@@ -261,6 +265,7 @@
             // 
             // eH
             // 
+            this.eH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.eH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.eH.FormattingEnabled = true;
             this.eH.Items.AddRange(new object[] {
@@ -292,7 +297,7 @@
             // 
             // button14
             // 
-            this.button14.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button14.BackColor = System.Drawing.Color.Indigo;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -331,6 +336,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "subject";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "subject";

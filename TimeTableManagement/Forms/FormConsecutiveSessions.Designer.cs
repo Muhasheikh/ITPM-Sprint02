@@ -274,8 +274,9 @@ namespace StudentsAndTagsManagement.Forms
             this.Controls.Add(this.labelSubjectCodeCSM);
             this.Controls.Add(this.labelConsecutiveManagement);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.MaximizeBox = false;
             this.Name = "FormConsecutiveSessions";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormConsecutiveSessions";
             this.Load += new System.EventHandler(this.FormConsecutiveSessions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearch)).EndInit();

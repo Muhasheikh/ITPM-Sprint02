@@ -36,11 +36,11 @@ namespace TimeTableManagement
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelSearchLectures = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbSubGroup = new System.Windows.Forms.ComboBox();
+            this.cmbLecturer = new System.Windows.Forms.ComboBox();
             this.BtnGenerateL = new System.Windows.Forms.Button();
-            this.dataGridViewSearchL = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelSearchLectures
@@ -68,12 +68,12 @@ namespace TimeTableManagement
             this.label1.TabIndex = 49;
             this.label1.Text = "Lecturer Name : ";
             // 
-            // cmbSubGroup
+            // cmbLecturer
             // 
-            this.cmbSubGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(191)))), ((int)(((byte)(255)))));
-            this.cmbSubGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSubGroup.FormattingEnabled = true;
-            this.cmbSubGroup.Items.AddRange(new object[] {
+            this.cmbLecturer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(191)))), ((int)(((byte)(255)))));
+            this.cmbLecturer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLecturer.FormattingEnabled = true;
+            this.cmbLecturer.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -81,11 +81,11 @@ namespace TimeTableManagement
             "5",
             "6",
             "7"});
-            this.cmbSubGroup.Location = new System.Drawing.Point(292, 175);
-            this.cmbSubGroup.Name = "cmbSubGroup";
-            this.cmbSubGroup.Size = new System.Drawing.Size(246, 28);
-            this.cmbSubGroup.TabIndex = 50;
-            this.cmbSubGroup.SelectedIndexChanged += new System.EventHandler(this.cmbSubGroup_SelectedIndexChanged);
+            this.cmbLecturer.Location = new System.Drawing.Point(292, 175);
+            this.cmbLecturer.Name = "cmbLecturer";
+            this.cmbLecturer.Size = new System.Drawing.Size(246, 28);
+            this.cmbLecturer.TabIndex = 50;
+            this.cmbLecturer.SelectedIndexChanged += new System.EventHandler(this.cmbSubGroup_SelectedIndexChanged);
             // 
             // BtnGenerateL
             // 
@@ -100,20 +100,20 @@ namespace TimeTableManagement
             this.BtnGenerateL.Text = "Generate Time Table";
             this.BtnGenerateL.UseVisualStyleBackColor = false;
             // 
-            // dataGridViewSearchL
+            // dataGridView1
             // 
-            this.dataGridViewSearchL.AllowUserToAddRows = false;
-            this.dataGridViewSearchL.AllowUserToDeleteRows = false;
-            this.dataGridViewSearchL.AllowUserToResizeColumns = false;
-            this.dataGridViewSearchL.AllowUserToResizeRows = false;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(191)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(31)))), ((int)(((byte)(84)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewSearchL.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewSearchL.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridViewSearchL.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(191)))), ((int)(((byte)(255)))));
-            this.dataGridViewSearchL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(191)))), ((int)(((byte)(255)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -121,8 +121,8 @@ namespace TimeTableManagement
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GrayText;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSearchL.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewSearchL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(191)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -130,11 +130,11 @@ namespace TimeTableManagement
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(191)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.InfoText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSearchL.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewSearchL.GridColor = System.Drawing.Color.Black;
-            this.dataGridViewSearchL.Location = new System.Drawing.Point(69, 255);
-            this.dataGridViewSearchL.Name = "dataGridViewSearchL";
-            this.dataGridViewSearchL.ReadOnly = true;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridView1.GridColor = System.Drawing.Color.Black;
+            this.dataGridView1.Location = new System.Drawing.Point(69, 255);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -142,18 +142,18 @@ namespace TimeTableManagement
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSearchL.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridViewSearchL.RowHeadersWidth = 51;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridView1.RowHeadersWidth = 51;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(31)))), ((int)(((byte)(84)))));
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewSearchL.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewSearchL.RowTemplate.Height = 29;
-            this.dataGridViewSearchL.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSearchL.ShowEditingIcon = false;
-            this.dataGridViewSearchL.Size = new System.Drawing.Size(854, 301);
-            this.dataGridViewSearchL.TabIndex = 81;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.ShowEditingIcon = false;
+            this.dataGridView1.Size = new System.Drawing.Size(854, 301);
+            this.dataGridView1.TabIndex = 81;
             // 
             // button1
             // 
@@ -174,14 +174,14 @@ namespace TimeTableManagement
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(164)))));
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridViewSearchL);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BtnGenerateL);
-            this.Controls.Add(this.cmbSubGroup);
+            this.Controls.Add(this.cmbLecturer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelSearchLectures);
             this.Name = "lecturerTime";
             this.Size = new System.Drawing.Size(992, 610);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,9 +191,9 @@ namespace TimeTableManagement
 
         private System.Windows.Forms.Label labelSearchLectures;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbSubGroup;
+        private System.Windows.Forms.ComboBox cmbLecturer;
         private System.Windows.Forms.Button BtnGenerateL;
-        private System.Windows.Forms.DataGridView dataGridViewSearchL;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
     }
 }

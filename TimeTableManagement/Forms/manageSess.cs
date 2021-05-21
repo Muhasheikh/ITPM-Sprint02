@@ -82,27 +82,43 @@ namespace ITPM
         private void button1_Click(object sender, EventArgs e)
         {
 
+
             /* updating the records*/
 
-            con.Open();
+            if (ValidateChildren(ValidationConstraints.Enabled) &&
+                name1.Text == ""  || sub.Text == "" || code.Text == "" || tag.Text == "" || grpid.Text == "" || subid.Text == "" || numofstu.Text == "" || dura.Text == "")
+            {
+                MessageBox.Show("Please fill out all the Empty Field(s)",
+                "Unable to Submit", MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation,
+                                MessageBoxDefaultButton.Button1);
+            }
 
-            cmd = new SqlCommand("update Session_Management set Lecturer_1 = '" + name1.Text + "', Lecturer_2 = '" + name2.Text + "', subject_name = '" + sub.Text + "', subject_code = '" + code.Text + "'," +
-                " Tags = '" +  tag.Text  +"', GroupID = '" + grpid.Text + "', SubGroupID = '" + subid.Text + "', NumberOfStudents = '" + numofstu.Text + "', Duration = '" + dura.Text + "' " +
-                "where SessionID ='" + Record_ID + "'", con);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Updated Successfully!!!");
-            con.Close();
-            Showdata();
+            else {
 
-            name1.SelectedIndex = -1;
-            name2.SelectedIndex = -1;
-            sub.SelectedIndex = -1;
-            code.SelectedIndex = -1;
-            tag.SelectedIndex = -1;
-            grpid.SelectedIndex = -1;
-            subid.SelectedIndex = -1;
-            numofstu.Clear();
-            dura.SelectedIndex = -1;
+                con.Open();
+
+                cmd = new SqlCommand("update Session_Management set Lecturer_1 = '" + name1.Text + "', Lecturer_2 = '" + name2.Text + "', subject_name = '" + sub.Text + "', subject_code = '" + code.Text + "'," +
+                    " Tags = '" + tag.Text + "', GroupID = '" + grpid.Text + "', SubGroupID = '" + subid.Text + "', NumberOfStudents = '" + numofstu.Text + "', Duration = '" + dura.Text + "' " +
+                    "where SessionID ='" + Record_ID + "'", con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Updated Successfully!!!");
+                con.Close();
+                Showdata();
+
+                name1.SelectedIndex = -1;
+                name2.SelectedIndex = -1;
+                sub.SelectedIndex = -1;
+                code.SelectedIndex = -1;
+                tag.SelectedIndex = -1;
+                grpid.SelectedIndex = -1;
+                subid.SelectedIndex = -1;
+                numofstu.Clear();
+                dura.SelectedIndex = -1;
+
+
+            }
+            
 
         }
 
@@ -231,6 +247,39 @@ namespace ITPM
             addSession session = new addSession();
             this.Hide();
             session.Show();
+        }
+
+        public void display()
+        {
+            dt = new DataTable();
+
+            if (textBox1.Text.Length > 0)
+            {
+                adpt = new SqlDataAdapter("select * from Session_Management where Lecturer_1 like '" + textBox1.Text + " %'", con);
+
+                adpt.Fill(dt);
+            }
+            else if (textBox2.Text.Length > 0)
+            {
+                adpt = new SqlDataAdapter("select * from Session_Management where subject_name like '" + textBox2.Text + " %'", con);
+
+                adpt.Fill(dt);
+            }
+            dataGridView2.DataSource = dt;
+        }
+
+
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textBox2.Clear();
+            display();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            display();
         }
     }
 }

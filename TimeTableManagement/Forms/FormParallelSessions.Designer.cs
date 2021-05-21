@@ -283,8 +283,9 @@ namespace StudentsAndTagsManagement.Forms
             this.Controls.Add(this.labelSubjectNamePSM);
             this.Controls.Add(this.labelParallelManagement);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.MaximizeBox = false;
             this.Name = "FormParallelSessions";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormParallelSessions";
             this.Load += new System.EventHandler(this.FormParallelSessions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchPSM)).EndInit();

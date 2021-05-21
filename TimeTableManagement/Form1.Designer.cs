@@ -30,6 +30,7 @@ namespace StudentsAndTagsManagement
         private void InitializeComponent()
         {
             this.panelSide = new System.Windows.Forms.Panel();
+            this.btn_TimeTable = new System.Windows.Forms.Button();
             this.BtnStatM = new System.Windows.Forms.Button();
             this.BtnRoomM = new System.Windows.Forms.Button();
             this.BtnAvailabilityM = new System.Windows.Forms.Button();
@@ -43,8 +44,23 @@ namespace StudentsAndTagsManagement
             this.DashBoard = new System.Windows.Forms.Button();
             this.buttonLogo = new System.Windows.Forms.Button();
             this.panelForm = new System.Windows.Forms.Panel();
-            this.btn_TimeTable = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lableSub = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lableSt = new System.Windows.Forms.Label();
+            this.labelLec = new System.Windows.Forms.Label();
+            this.labelStudentsGroups = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.labelLecs = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panelSide.SuspendLayout();
+            this.panelForm.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSide
@@ -69,6 +85,20 @@ namespace StudentsAndTagsManagement
             this.panelSide.Size = new System.Drawing.Size(355, 637);
             this.panelSide.TabIndex = 0;
             this.panelSide.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSide_Paint);
+            // 
+            // btn_TimeTable
+            // 
+            this.btn_TimeTable.BackColor = System.Drawing.Color.White;
+            this.btn_TimeTable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_TimeTable.Font = new System.Drawing.Font("Copperplate Gothic Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_TimeTable.ForeColor = System.Drawing.Color.Black;
+            this.btn_TimeTable.Location = new System.Drawing.Point(0, 586);
+            this.btn_TimeTable.Name = "btn_TimeTable";
+            this.btn_TimeTable.Size = new System.Drawing.Size(355, 49);
+            this.btn_TimeTable.TabIndex = 13;
+            this.btn_TimeTable.Text = "Filter TImeTable";
+            this.btn_TimeTable.UseVisualStyleBackColor = false;
+            this.btn_TimeTable.Click += new System.EventHandler(this.btn_TimeTable_Click);
             // 
             // BtnStatM
             // 
@@ -244,25 +274,141 @@ namespace StudentsAndTagsManagement
             // panelForm
             // 
             this.panelForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(164)))));
+            this.panelForm.Controls.Add(this.panel2);
+            this.panelForm.Controls.Add(this.panel1);
+            this.panelForm.Controls.Add(this.panel3);
             this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelForm.Location = new System.Drawing.Point(355, 0);
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(992, 637);
             this.panelForm.TabIndex = 1;
             // 
-            // btn_TimeTable
+            // panel2
             // 
-            this.btn_TimeTable.BackColor = System.Drawing.Color.White;
-            this.btn_TimeTable.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_TimeTable.Font = new System.Drawing.Font("Copperplate Gothic Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_TimeTable.ForeColor = System.Drawing.Color.Black;
-            this.btn_TimeTable.Location = new System.Drawing.Point(0, 586);
-            this.btn_TimeTable.Name = "btn_TimeTable";
-            this.btn_TimeTable.Size = new System.Drawing.Size(355, 49);
-            this.btn_TimeTable.TabIndex = 13;
-            this.btn_TimeTable.Text = "Filter TImeTable";
-            this.btn_TimeTable.UseVisualStyleBackColor = false;
-            this.btn_TimeTable.Click += new System.EventHandler(this.btn_TimeTable_Click);
+            this.panel2.Controls.Add(this.lableSub);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(660, 47);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(235, 114);
+            this.panel2.TabIndex = 6;
+            // 
+            // lableSub
+            // 
+            this.lableSub.AutoSize = true;
+            this.lableSub.Font = new System.Drawing.Font("SimSun", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lableSub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lableSub.Location = new System.Drawing.Point(97, 56);
+            this.lableSub.Name = "lableSub";
+            this.lableSub.Size = new System.Drawing.Size(33, 34);
+            this.lableSub.TabIndex = 6;
+            this.lableSub.Text = "S";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(43, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 23);
+            this.label2.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(58, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 23);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Subjects";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lableSt);
+            this.panel1.Controls.Add(this.labelLec);
+            this.panel1.Controls.Add(this.labelStudentsGroups);
+            this.panel1.Location = new System.Drawing.Point(82, 47);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(235, 114);
+            this.panel1.TabIndex = 5;
+            // 
+            // lableSt
+            // 
+            this.lableSt.AutoSize = true;
+            this.lableSt.Font = new System.Drawing.Font("SimSun", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lableSt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lableSt.Location = new System.Drawing.Point(105, 56);
+            this.lableSt.Name = "lableSt";
+            this.lableSt.Size = new System.Drawing.Size(33, 34);
+            this.lableSt.TabIndex = 4;
+            this.lableSt.Text = "S";
+            this.lableSt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelLec
+            // 
+            this.labelLec.AutoSize = true;
+            this.labelLec.Font = new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelLec.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelLec.Location = new System.Drawing.Point(43, 57);
+            this.labelLec.Name = "labelLec";
+            this.labelLec.Size = new System.Drawing.Size(0, 23);
+            this.labelLec.TabIndex = 3;
+            // 
+            // labelStudentsGroups
+            // 
+            this.labelStudentsGroups.AutoSize = true;
+            this.labelStudentsGroups.Font = new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelStudentsGroups.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelStudentsGroups.Location = new System.Drawing.Point(15, 19);
+            this.labelStudentsGroups.Name = "labelStudentsGroups";
+            this.labelStudentsGroups.Size = new System.Drawing.Size(205, 23);
+            this.labelStudentsGroups.TabIndex = 2;
+            this.labelStudentsGroups.Text = "Students Groups";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.labelLecs);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Location = new System.Drawing.Point(374, 47);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(235, 114);
+            this.panel3.TabIndex = 4;
+            // 
+            // labelLecs
+            // 
+            this.labelLecs.AutoSize = true;
+            this.labelLecs.Font = new System.Drawing.Font("SimSun", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelLecs.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelLecs.Location = new System.Drawing.Point(104, 56);
+            this.labelLecs.Name = "labelLecs";
+            this.labelLecs.Size = new System.Drawing.Size(33, 34);
+            this.labelLecs.TabIndex = 5;
+            this.labelLecs.Text = "L";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(43, 57);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 23);
+            this.label5.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(58, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(127, 23);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Lecturers";
             // 
             // Form1
             // 
@@ -272,9 +418,19 @@ namespace StudentsAndTagsManagement
             this.ClientSize = new System.Drawing.Size(1347, 637);
             this.Controls.Add(this.panelForm);
             this.Controls.Add(this.panelSide);
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panelSide.ResumeLayout(false);
+            this.panelForm.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -297,6 +453,18 @@ namespace StudentsAndTagsManagement
         private System.Windows.Forms.Button BtnA;
         private System.Windows.Forms.Button BtnAvailabilityM;
         private System.Windows.Forms.Button btn_TimeTable;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label labelLecs;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lableSt;
+        private System.Windows.Forms.Label labelLec;
+        private System.Windows.Forms.Label labelStudentsGroups;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lableSub;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

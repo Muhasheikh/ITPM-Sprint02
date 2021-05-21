@@ -90,37 +90,52 @@ namespace ITPM
         private void button1_Click(object sender, EventArgs e)
         {
 
-             
-            sql = "update Lec_details set Lecturer_Name = @Lecturer_Name,Level = @Level,LecturerID = @LecturerID,Center = @Center,Faculty = @Faculty,Department = @Department,Building = @Building where LecturerID = @LecturerID ";
-            con.Open();
-            cmd = new SqlCommand(sql, con);
-            state();
 
-            cmd.Parameters.AddWithValue("@Lecturer_Name", lecName.Text);
-            cmd.Parameters.AddWithValue("@Level", lvl.Text);
-            cmd.Parameters.AddWithValue("@LecturerID", LID.Text);
-            cmd.Parameters.AddWithValue("@Center", center.Text);
-            cmd.Parameters.AddWithValue("@Faculty", faculty.Text);
-            cmd.Parameters.AddWithValue("@Department", depart.Text);
-            cmd.Parameters.AddWithValue("@Building", building.Text);
+            if (ValidateChildren(ValidationConstraints.Enabled) &&
+               lecName.Text == "" || lvl.Text == "" || LID.Text == "" || center.Text == "" || faculty.Text == "" || depart.Text == "" || building.Text == "")
+            {
+                MessageBox.Show("Please fill out the Empty Field(s)",
+                "Unable to Submit", MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation,
+                                MessageBoxDefaultButton.Button1);
+            }
+            else
+            {
+
+                sql = "update Lec_details set Lecturer_Name = @Lecturer_Name,Level = @Level,LecturerID = @LecturerID,Center = @Center,Faculty = @Faculty,Department = @Department,Building = @Building where LecturerID = @LecturerID ";
+                con.Open();
+                cmd = new SqlCommand(sql, con);
+                state();
+
+                cmd.Parameters.AddWithValue("@Lecturer_Name", lecName.Text);
+                cmd.Parameters.AddWithValue("@Level", lvl.Text);
+                cmd.Parameters.AddWithValue("@LecturerID", LID.Text);
+                cmd.Parameters.AddWithValue("@Center", center.Text);
+                cmd.Parameters.AddWithValue("@Faculty", faculty.Text);
+                cmd.Parameters.AddWithValue("@Department", depart.Text);
+                cmd.Parameters.AddWithValue("@Building", building.Text);
 
 
-            cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
 
-            con.Close();
+                con.Close();
 
-            MessageBox.Show("Data Update Successfully!!");
+                MessageBox.Show("Data Update Successfully!!");
 
-            Showdata();
+                Showdata();
 
-            lecName.Clear();
-            lvl.SelectedIndex = -1;
-            LID.Clear();
-            center.SelectedIndex = -1;
-            faculty.SelectedIndex = -1;
-            depart.SelectedIndex = -1;
-            building.SelectedIndex = -1;
-            
+                lecName.Clear();
+                lvl.SelectedIndex = -1;
+                LID.Clear();
+                center.SelectedIndex = -1;
+                faculty.SelectedIndex = -1;
+                depart.SelectedIndex = -1;
+                building.SelectedIndex = -1;
+
+
+            }
+
+
 
 
         }

@@ -143,5 +143,11 @@ namespace finallllllllllllll
             manage.Show();
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            RoomManage rm = new RoomManage();
+            rm.Show();
+        }
     }
 }

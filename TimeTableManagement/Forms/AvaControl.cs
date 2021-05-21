@@ -5,18 +5,26 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace StudentsAndTagsManagement
 {
     public partial class AvaControl : UserControl
     {
+        
+
         public AvaControl()
         {
             InitializeComponent();
         }
 
+
+
+     
+       
         private void btnLecturer_Click(object sender, EventArgs e)
         {
+           
             lecturerControl lc = new lecturerControl();
             MainControl.ShowControl(lc, panelLecturer);
         }

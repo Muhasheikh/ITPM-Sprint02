@@ -50,6 +50,7 @@ namespace StudentsAndTagsManagement
             this.btn_Clear = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,9 +186,9 @@ namespace StudentsAndTagsManagement
             // 
             // txtTIme
             // 
-            this.txtTIme.Location = new System.Drawing.Point(320, 252);
+            this.txtTIme.Location = new System.Drawing.Point(310, 248);
             this.txtTIme.Name = "txtTIme";
-            this.txtTIme.PlaceholderText = "Enter in the Format";
+            this.txtTIme.PlaceholderText = "Enter in the Format Given";
             this.txtTIme.Size = new System.Drawing.Size(275, 27);
             this.txtTIme.TabIndex = 41;
             // 
@@ -317,11 +318,23 @@ namespace StudentsAndTagsManagement
             this.dataGridView1.TabIndex = 48;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(374, 288);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 20);
+            this.label7.TabIndex = 96;
+            this.label7.Text = "00:00 - 00:00";
+            // 
             // lecturerControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(68)))), ((int)(((byte)(164)))));
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_Clear);
@@ -365,5 +378,6 @@ namespace StudentsAndTagsManagement
         private System.Windows.Forms.Button btn_Clear;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -22,6 +22,7 @@ namespace StudentsAndTagsManagement
             InitializeComponent();
             displayYear();
             DisplayData();
+            displaySession();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -34,7 +35,24 @@ namespace StudentsAndTagsManagement
            
         }
 
+        public void displaySession() {
 
+
+            cmbSession.Items.Clear();
+            String sql = "SELECT * FROM Session_Management";
+            con.Open();
+            cmd = new SqlCommand(sql, con);
+            rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                cmbSession.Items.Add(rd["SessionID"].ToString());
+                
+
+            }
+            con.Close();
+
+        }
 
         public void displayYear()
         {
@@ -62,7 +80,11 @@ namespace StudentsAndTagsManagement
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
-            if (cmbYear.SelectedIndex < 0 || cmbSubGroup.SelectedIndex < 0 || cmbSubGroup.SelectedIndex < 0 || cmbSession.SelectedIndex < 0 || txtTIme.Text == "")
+            String timeDuration = txtTIme.Text;
+            String[] times = timeDuration.Split('-');
+            DateTime temp;
+
+            if (cmbYear.SelectedIndex < 0 || cmbSubGroup.SelectedIndex < 0 || cmbSubGroup.SelectedIndex < 0 || cmbSession.SelectedIndex < 0 || txtTIme.Text == "" || times.Length != 2 || !DateTime.TryParse(times[0].Trim(), out temp) || !DateTime.TryParse(times[1].Trim(), out temp))
             {
 
                 if (cmbYear.SelectedIndex < 0)
@@ -90,6 +112,21 @@ namespace StudentsAndTagsManagement
                     MessageBox.Show("Please input the Time !", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
+                else if (times.Length != 2)
+                {
+                    MessageBox.Show("Please input Valid Time Duration (08:25 - 10:15) !", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (!DateTime.TryParse(times[0].Trim(), out temp))
+                {
+                    MessageBox.Show("Please input Valid Time Duration (08:25 - 10:15) !", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else if (!DateTime.TryParse(times[1].Trim(), out temp))
+                {
+                    MessageBox.Show("Please input Valid Time Duration (08:25 - 10:15) !", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
             }
 
             ///insert
@@ -97,14 +134,14 @@ namespace StudentsAndTagsManagement
             else
             {
 
-
+                String texttime = DateTime.Parse(times[0].Trim()).ToString("HH:mm") + " - " + DateTime.Parse(times[1].Trim()).ToString("HH:mm");
                 cmd = new SqlCommand("insert into tbl_StAvailability(Year,GroupNumber,SubGroupNumber,SessionID,Time) values(@year,@gNo,@sNO,@sessID,@time)", con);
                 con.Open();
                 cmd.Parameters.AddWithValue("@year", cmbYear.Text);
                 cmd.Parameters.AddWithValue("@gNo", cmbGroup.Text);
                 cmd.Parameters.AddWithValue("@sNO", cmbSubGroup.Text);
                 cmd.Parameters.AddWithValue("@sessID", cmbSession.Text);
-                cmd.Parameters.AddWithValue("@time", txtTIme.Text);
+                cmd.Parameters.AddWithValue("@time", texttime);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -156,7 +193,12 @@ namespace StudentsAndTagsManagement
         {
             if (ID != 0)
             {
-                if (cmbYear.SelectedIndex < 0 || cmbSubGroup.SelectedIndex < 0 || cmbSubGroup.SelectedIndex < 0 || cmbSession.SelectedIndex < 0 || txtTIme.Text == "")
+
+                String timeDuration = txtTIme.Text;
+                String[] times = timeDuration.Split('-');
+                DateTime temp;
+
+                if (cmbYear.SelectedIndex < 0 || cmbSubGroup.SelectedIndex < 0 || cmbSubGroup.SelectedIndex < 0 || cmbSession.SelectedIndex < 0 || txtTIme.Text == "" || times.Length != 2 || !DateTime.TryParse(times[0].Trim(), out temp) || !DateTime.TryParse(times[1].Trim(), out temp))
                 {
 
                     if (cmbYear.SelectedIndex < 0)
@@ -184,13 +226,28 @@ namespace StudentsAndTagsManagement
                         MessageBox.Show("Please input the Time !", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     }
+                    else if (times.Length != 2)
+                    {
+                        MessageBox.Show("Please input Valid Time Duration (08:25 - 10:15) !", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
+                    else if (!DateTime.TryParse(times[0].Trim(), out temp))
+                    {
+                        MessageBox.Show("Please input Valid Time Duration (08:25 - 10:15) !", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
+                    else if (!DateTime.TryParse(times[1].Trim(), out temp))
+                    {
+                        MessageBox.Show("Please input Valid Time Duration (08:25 - 10:15) !", "Empty Field", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
                 }
 
                 else
                 {
 
 
-
+                    String texttime = DateTime.Parse(times[0].Trim()).ToString("HH:mm") + " - " + DateTime.Parse(times[1].Trim()).ToString("HH:mm");
                     cmd = new SqlCommand("update tbl_StAvailability set year=@year,GroupNumber=@gNo,SubGroupNumber=@sNO,SessionID=@sessID,Time=@time where ID=@id", con);
                     con.Open();
                     cmd.Parameters.AddWithValue("@id", ID);
@@ -198,7 +255,7 @@ namespace StudentsAndTagsManagement
                     cmd.Parameters.AddWithValue("@gNo", cmbGroup.Text);
                     cmd.Parameters.AddWithValue("@sNO", cmbSubGroup.Text);
                     cmd.Parameters.AddWithValue("@sessID", cmbSession.Text);
-                    cmd.Parameters.AddWithValue("@time", txtTIme.Text);
+                    cmd.Parameters.AddWithValue("@time", texttime);
 
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Record Updated Successfully", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
